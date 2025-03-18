@@ -8,6 +8,9 @@ class LojaService {
 
     static async createLoja(lojaData: {name:string; endereco: string; cep:string; numero: number}){
         const coords = await GeolocationService.getCoordinatesFromCep(lojaData.cep);
+        const lojas = await LojaRepository.getLojas();
+        const loja = lojas.find(loja=> loja.cep === lojaData.cep && loja.numero === lojaData.numero);
+        if(loja) throw new Error("Loja já cadastrada!"); 
         if(!coords) throw new Error("CEP inválido ou não encontrado!");
 
         return await LojaRepository.createLoja({...lojaData,latitude: coords.latitude, longitude: coords.longitude});

@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import { AboutProvider } from "../context/AboutContext";
 
 const About = lazy(() => import("../pages/About"));
+const Cadastro = lazy(() => import("../pages/Cadastro"));
 
 export const routes: RouteObject[] = [
   { path: "/", element: <Home /> },
@@ -15,4 +16,5 @@ export const routes: RouteObject[] = [
       </AboutProvider>
     ), 
   },
+  {path: "/cadastro", element: <Cadastro />},
 ];
