@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx", // ou "react"
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "target": "ES6", 
+    "lib": ["ES6", "DOM"], 
+    "module": "ESNext"
+  }
+}
